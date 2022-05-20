@@ -23,9 +23,10 @@ public class StationController {
 	}
 
 	@RequestMapping("/stations/findAll")
+
 	public String showStationList(Model model) {
-		model.addAttribute("stations", repository.findAll());
-		return "stations/station_list";
+		model.addAttribute("stations", repository.findAll()); // return "stations/station_list";
+		return "stations/create_input";
 	}
 
 	@RequestMapping("stations/getById/{id}")
@@ -40,11 +41,14 @@ public class StationController {
 	}
 
 	@RequestMapping(path = "/stations/create/complete", method = RequestMethod.POST)
-	public String createComplete(StationForm form) {
+
+	public String createComplete(StationForm form, Model model) {
 		Station station = new Station();
 		station.setName(form.getName());
 		repository.save(station);
-		return "redirect:/stations/getById/" + station.getId();
+		model.addAttribute("stations", repository.findAll());
+		return "stations/station_list";
+		// return "redirect:/stations/getById/" + station.getId();
 	}
 
 }

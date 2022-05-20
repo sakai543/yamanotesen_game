@@ -7,18 +7,20 @@
 </head>
 <body>
 
-	<header><h1>1人山手線ゲーム！</h1></header>
+	<header>
+		<h1>1人山手線ゲーム！</h1>
+	</header>
 
-	<div class = "question">
+	<div class="question">
 		<img th:src="@{/img/senro.png}">
 	</div>
 
-
 	<form method="post" th:action="@{/stations/create/complete}">
-	駅名：<input type="text" name="name" />
-	<input type="submit" value="登録する" />
+		<input type="text" name="name" />
+		
+		<input type="submit" value="登録する" />
 	</form>
-	
+
 
 </body>
 </html>
