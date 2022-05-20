@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>1人山手線ゲーム</title>
+<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+	<header>
+		<h1>1人山手線ゲーム！</h1>
+	</header>
+
+	<main>
+
+		<div class="content">
+			<img th:src="@{/img/266864.jpg}">
+		</div>
+
+		<!-- 
+	<a href="/game/stations/findAll" class = "btn btn--orange"><b>全件検索</b></a> -->
+		<!-- <a href="/game/stations/getById/1" class = "btn btn--orange"><b>主キー検索</b></a>
+ -->
+		<a href="/game/stations/create/input" class="btn btn--orange"><b>登録</b></a>
+
+
+	</main>
+
+</body>
+</html>

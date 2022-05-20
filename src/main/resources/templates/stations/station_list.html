@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>1人山手線ゲーム</title>
+<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+	<header><h1>1人山手線ゲーム！</h1></header>
+
+	<table>
+	<tr>
+	<th>商品番号</th>
+	<th>商品名</th>
+	</tr>
+	<tr th:each="station: ${stations}">
+	<td th:text="${station.id}"></td>
+	<td th:text="${station.name}"></td>
+	</tr>
+	</table>
+	
+
+</body>
+</html>
